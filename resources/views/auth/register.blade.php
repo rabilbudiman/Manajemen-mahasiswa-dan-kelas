@@ -32,14 +32,8 @@
             @endif
         </div>
 
-        <div class="form-group form-floating mb-3">
-            <input type="password" class="form-control" name="password_confirmation" value="{{ old('password_confirmation') }}" placeholder="Confirm Password" required="required">
-            <label for="floatingConfirmPassword">Confirm Password</label>
-            @if ($errors->has('password_confirmation'))
-                <span class="text-danger text-left">{{ $errors->first('password_confirmation') }}</span>
-            @endif
-        </div>
-
+        
+        
         <button class="w-100 btn btn-lg btn-primary" type="submit">Register</button>
         
         @include('auth.partials.copy')
