@@ -1,0 +1,8 @@
+.font-u {
+    font-size: large;
+    font-weight: bolder;
+}
+
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
