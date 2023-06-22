@@ -2,21 +2,6 @@
 <!-- START FORM -->
 @section('konten') 
 
-<nav class="py-2 bg-light border-bottom">
-    <div class="container d-flex flex-wrap">
-      <ul class="nav me-auto">
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2 active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">About</a></li>
-      </ul>
-      <ul class="nav">
-        <li class="nav-item"><a href="#" class="nav-link link-dark px-2">Logout</a></li>
-      </ul>
-    </div>
-  </nav>
-
 <form action='{{ url('mahasiswa') }}' method='post'>
 @csrf 
 <div class="my-3 p-3 bg-body rounded shadow-sm">
