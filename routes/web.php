@@ -19,3 +19,7 @@ Route::get('/', function () {
 });
 
 Route::resource('mahasiswa', mahasiswaController::class);
+
+Route::get('/dashboard', function(){
+    return view('admin.dashboard_admin');
+});
