@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\mahasiswaController;
+use App\Http\Controllers\kelasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ Route::get('/', function () {
 });
 
 Route::resource('mahasiswa', mahasiswaController::class);
+Route::resource('kelas', kelasController::class);
 
 Route::get('/dashboard', function(){
     return view('admin.dashboard_admin');
