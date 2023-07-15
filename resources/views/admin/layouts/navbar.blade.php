@@ -7,5 +7,8 @@
           <img src="{{ asset('img/user_profile.jpg') }}" class="rounded-circle" alt="profile">
         </a>
       </li>
+      
+      <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="/sesi/logout" class="nav-link">Logout</a></li>
     </ul>
   </nav>

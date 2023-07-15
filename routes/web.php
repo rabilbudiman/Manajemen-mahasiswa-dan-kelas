@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\mahasiswaController;
 use App\Http\Controllers\kelasController;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,9 @@ Route::resource('kelas', kelasController::class);
 Route::get('/dashboard', function(){
     return view('admin.dashboard_admin');
 });
+
+Route::get('/sesi', [SessionController::class, 'index']);
+Route::post('sesi/login', [SessionController::class, 'login']);
+Route::get('sesi/logout', [SessionController::class, 'logout']);
+Route::get('sesi/register', [SessionController::class, 'register']);
+Route::post('sesi/create', [SessionController::class, 'create']);
