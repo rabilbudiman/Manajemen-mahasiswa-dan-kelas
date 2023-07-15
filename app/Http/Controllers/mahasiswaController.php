@@ -51,21 +51,31 @@ class mahasiswaController extends Controller
         Session::flash('jurusan', $request->jurusan);
 
         $request->validate([
-            'nim' => 'required|numeric|unique:mahasiswa,nim',
+            'nim' => 'required',
             'nama' => 'required',
             'jurusan' => 'required',
+            
+            // 'foto' => 'required|mimes:jpeg.jpg.png.gif',
         ], [
             'nim.required' => 'NIM wajib diisi',
             'nim.numeric' => 'NIM wajib dalam angka',
-            'nim.unique' => 'NIM yang diisikan sudah ada dalam database',
             'nama.required' => 'Nama wajib diisi',
             'jurusan.required' => 'Jurusan wajib diisi',
+            
+            // 'foto.required' => 'silahkan masukan foto',
+            // 'foto.mimes' => 'Format foto salah',
+
         ]);
+
+
+
         $data = [
             'nim' => $request->nim,
             'nama' => $request->nama,
             'jurusan' => $request->jurusan,
         ];
+
+
         mahasiswa::create($data);
         return redirect()->to('mahasiswa')->with('success', 'Berhasil menambahkan data');
     }
@@ -107,8 +117,10 @@ class mahasiswaController extends Controller
             'jurusan' => 'required',
         ], [
             'nama.required' => 'Nama wajib diisi',
-            'jurusan.required' => 'Jurusan wajib diisi',
+            'jurusan.required' => 'Opsi jurusan wajib diisi',
         ]);
+
+
         $data = [
             'nama' => $request->nama,
             'jurusan' => $request->jurusan,
