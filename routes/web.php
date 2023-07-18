@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\mahasiswaController;
 use App\Http\Controllers\kelasController;
-use App\Http\Controllers\SessionController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\mahasiswaController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,15 +22,21 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('dashboard', [DashboardController::class, 'index'])->middleware('auth');
+
+
+
 Route::resource('mahasiswa', mahasiswaController::class);
 Route::resource('kelas', kelasController::class);
 
-Route::get('/dashboard', function(){
-    return view('admin.dashboard_admin');
-});
-
-Route::get('/sesi', [SessionController::class, 'index']);
-Route::post('sesi/login', [SessionController::class, 'login']);
-Route::get('sesi/logout', [SessionController::class, 'logout']);
-Route::get('sesi/register', [SessionController::class, 'register']);
-Route::post('sesi/create', [SessionController::class, 'create']);
+// Route::get('/dashboard', function(){
+//     return view('admin.dashboard_admin');
+// });
