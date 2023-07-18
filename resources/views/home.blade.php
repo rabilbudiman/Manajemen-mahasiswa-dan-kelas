@@ -17,8 +17,7 @@
         <div class="container mt-3">
           <span class="navbar-brand mb-3 h1">MAMAK</span>
           <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-outline-warning me-2">Login</button>
-            <button type="button" class="btn btn-light">Register</button>
+            <a href="login" class="btn btn-outline-warning me-2">Login</a>
           </div>
         </div>
       </nav>
