@@ -1,4 +1,4 @@
-@extends('layout.template')
+@extends('layouts.template')
 <!-- START FORM -->
 @section('konten') 
 
