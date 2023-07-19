@@ -23,20 +23,20 @@
       <form action="/login" method="post">
         @csrf
         <div class="form-floating">
-          <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
           <label for="email">Email address</label>
+          <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="name@example.com" autofocus required value="{{ old('email') }}">
           @error('email')
             <div class="invalid-feedback">
               {{ $message }}
             </div>
           @enderror
         </div>
-        <div class="form-floating">
-          <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+        <div class="form-floating mb-3">
           <label for="password">Password</label>
+          <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
         </div>
     
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+        <button class="w-100 btn btn-lg btn-danger" type="submit">Login</button>
       </form>
       <small class="d-block text-center mt-3">Not registered? <a href="/register">Register Now!</a></small>
     </main>
