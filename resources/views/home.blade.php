@@ -29,5 +29,13 @@
             <p class="text-bold text-capitalize">Selamat Datang di Manajemen Mahasiswa dan Kelas (MAMAK)</p>
         </div>
       </div>
+
+      <div class="d-flex justify-content-center">
+        <img src="{{ asset('img/belajar.svg') }}" alt="orang belajar" width="500">
+        <div class="flex-column  text-secondary font-u">
+            <h1 class="text-bold">MAMAK</h1>
+            <p class="text-bold text-capitalize">Selamat Datang di Manajemen Mahasiswa dan Kelas (MAMAK)</p>
+        </div>
+      </div>
 </body>
 </html>
