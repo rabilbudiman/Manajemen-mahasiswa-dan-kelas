@@ -56,7 +56,6 @@
                                     <th>Nama Lengkap</th>
                                     <th>Kelamin</th>
                                     <th>Program Studi</th>
-                                    <th>Gambar</th>
                                     <th>Kelas</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
@@ -65,18 +64,12 @@
                             <tbody>
                                 <?php $i = $data->firstItem(); ?>
                                 @foreach ($data as $item)
-                                    <tr>
+                                    <tr class="text-center">
                                         <td>{{ $i }}</td>
-                                        <!-- <td>
-                        @if ($item->foto)
-    <img style="max: width 50px; src="{{ url('foto') . '/' . $item->foto }}"/>
-    @endif
-                    </td> -->
                                         <td>{{ $item->nim }}</td>
                                         <td>{{ $item->nama }}</td>
                                         <td>{{ $item->kelamin }}</td>
                                         <td>{{ $item->jurusan }}</td>
-                                        <td>{{ $item->gambar }}</td>
                                         <td>{{ $item->kelas }}</td>
                                         <td>{{ $item->status }}</td>
 

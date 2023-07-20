@@ -35,7 +35,10 @@
                 <th class="col-md-1">No</th>
                 <th class="col-md-3">NIM</th>
                 <th class="col-md-4">Nama</th>
+                <th class="col-md-4">Kelamin</th>
                 <th class="col-md-2">Jurusan</th>
+                <th class="col-md-4">Kelas</th>
+                <th class="col-md-2">Status</th>
                 <th class="col-md-2">Aksi</th>
             </tr>
         </thead>
@@ -46,7 +49,10 @@
                 <td>{{ $i }}</td>
                 <td>{{ $item->nim }}</td>
                 <td>{{ $item->nama }}</td>
+                <td>{{ $item->kelamin }}</td>
                 <td>{{ $item->jurusan }}</td>
+                <td>{{ $item->kelas }}</td>
+                <td>{{ $item->status }}</td>
                 <td>
                     <a href='{{ url('kelas/'.$item->nim.'/edit') }}' class="btn btn-warning btn-sm">Edit</a>
                     <form onsubmit="return confirm('Yakin akan menghapus data?')" class='d-inline' action="{{ url('mahasiswa/'.$item->nim) }}" method="post">

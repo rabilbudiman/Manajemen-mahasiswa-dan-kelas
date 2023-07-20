@@ -17,7 +17,10 @@ return new class extends Migration
             $table->integer('nim');
             $table->unique('nim');
             $table->string('nama');
+            $table->string('kelamin');
             $table->string('jurusan');
+            $table->string('kelas');
+            $table->string('status');
 
             
         });

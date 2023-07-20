@@ -17,17 +17,16 @@ return new class extends Migration
             $table->integer('nim');
             $table->unique('nim');
             $table->string('nama');
+            $table->string('kelamin');
             $table->string('jurusan');
-           // $table->string('semester');
-           // $table->string('kelas');
-           // $table->string('status');
-            // $table->string('gambar');
+           $table->string('kelas');
+           $table->string('status');
         });
     }
 
     /**
      * Reverse the migrations.
-     *
+     *php artiss
      * @return void
      */
     public function down()
