@@ -31,17 +31,17 @@
         </div>
     </div>
 
-    <!--div class="mb-3 row">
+    <div class="mb-3 row">
         <label for="kelamin" class="col-sm-2 col-form-label">Kelamin</label>
         <div class="col-sm-10">
             <select type="selection" class="form-select" name='kelamin' value="{{ Session::get('kelamin') }}" id="kelamin" aria-label="Default select example">
                 <option selected>Pilih Opsi</option>
-                <option value="pria">Pria</option>
-                <option value="wanita">Wanita</option>
+                <option value="Pria">Pria</option>
+                <option value="Wanita">Wanita</option>
             </select>
 
         </div>
-    </div-->
+</div>
 
     <div class="mb-3 row">
         <label for="jurusan" class="col-sm-2 col-form-label">Jurusan</label>
@@ -52,6 +52,7 @@
                 <option value="Teknik Lingkungan">Teknik Lingkungan</option>
                 <option value="Teknik Informatika">Teknik Informatika</option>
                 <option value="Teknik Komputer">Teknik Komputer</option>
+                <option value="Teknik Komputer">Teknik Mesin</option>
             </select>
         </div>
     </div>

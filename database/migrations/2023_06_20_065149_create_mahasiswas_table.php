@@ -17,7 +17,6 @@ return new class extends Migration
             $table->integer('nim');
             $table->unique('nim');
             $table->string('nama');
-            //$table->enum('kelamin', ['pria', 'wanita']);
             $table->string('jurusan');
            // $table->string('semester');
            // $table->string('kelas');

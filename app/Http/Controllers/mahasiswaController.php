@@ -73,6 +73,7 @@ class mahasiswaController extends Controller
             'nim' => $request->nim,
             'nama' => $request->nama,
             'jurusan' => $request->jurusan,
+            ''
         ];
 
 
