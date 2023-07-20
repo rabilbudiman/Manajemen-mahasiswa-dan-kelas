@@ -1,80 +1,103 @@
-@extends('layouts.template')
-<!-- START DATA -->
-@section('konten')   
+<!DOCTYPE html>
+<html lang="en">
 
-@include('mahasiswa.layouts.navbar')
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Data Mahasiswa</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
 
-<div class="container-fluid">
-    <div class="row">
-      @include('mahasiswa.layouts.sidebar')
-  
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Mahasiswa</h1>
-        </div>
+<body>
+    @extends('layouts.template')
+    <!-- START DATA -->
+    @section('konten')
+        @include('layouts.navbar')
 
-        <div class="my-3 p-3 bg-body rounded shadow-sm">
-    <!-- FORM PENCARIAN -->
-    <div class="pb-3">
-        <form class="d-flex" action="{{ url('mahasiswa') }}" method="get">
-            <input class="form-control me-1" type="search" name="katakunci" value="{{ Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
-            <button class="btn btn-secondary" type="submit">Cari</button>
-        </form>
-    </div>
-    
-    <!-- TOMBOL TAMBAH DATA -->
-    <div class="pb-3">
-        <a href='{{ url('mahasiswa/create') }}' class="btn btn-primary">+ Tambah Data</a>
-    </div>
+        <div class="container-fluid">
+            <div class="row">
+                @include('layouts.sidebar')
 
-    <table class="table table-striped">
-        <thead>
-        <tr class="text-center">
-            <th>No</th>
-                <!-- <th>Foto</th> -->
-                <th>NIM</th>
-                <th>Nama Lengkap</th>
-                <th>Kelamin</th>
-                <th>Program Studi</th>
-                <th>Gambar</th>
-                <th>Kelas</th>
-                <th>Status</th>
-                <th>Aksi</th>
-        </tr>
-        </thead>
-        <tbody>
-            <?php $i = $data->firstItem() ?>
-            @foreach ($data as $item)
-            <tr>
-                <td>{{ $i }}</td>
-                <!-- <td>
-                    @if ($item->foto)
-                    <img style="max: width 50px; src="{{ url('foto').'/'.$item->foto}}"/>
-                    @endif
-                </td> -->
-                <td>{{ $item->nim }}</td>
-                <td>{{ $item->nama }}</td>
-                <td>{{ $item->kelamin }}</td>
-                <td>{{ $item->jurusan }}</td>
-                <td>{{ $item->gambar}}</td>
-                <td>{{ $item->kelas }}</td>
-                <td>{{ $item->status }}</td>
+                <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <div
+                        class="d-flex justify-content-between flex-md-nowrap align-items-center border-bottom mb-3 flex-wrap pb-2 pt-3">
+                        <h1 class="h2">Mahasiswa</h1>
+                    </div>
 
-                
+                    <div class="bg-body my-3 rounded p-3 shadow-sm">
+                        <!-- FORM PENCARIAN -->
+                        <div class="pb-3">
+                            <form action="{{ url('mahasiswa') }}" class="d-flex" method="get">
+                                <input aria-label="Search" class="form-control me-1" name="katakunci"
+                                    placeholder="Masukkan kata kunci" type="search"
+                                    value="{{ Request::get('katakunci') }}">
+                                <button class="btn btn-secondary" type="submit">Cari</button>
+                            </form>
+                        </div>
 
-                <td>
-                    <a href='{{ url('mahasiswa/'.$item->nim.'/edit') }}' class="btn btn-warning btn-sm">Edit</a>
-                    <form onsubmit="return confirm('Yakin akan menghapus data?')" class='d-inline' action="{{ url('mahasiswa/'.$item->nim) }}" method="post">
-                        @csrf 
-                        @method('DELETE')
-                        <button type="submit" name="submit" class="btn btn-danger btn-sm">Del</button>
-                    </form>
-                </td>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
-</div>
-<!-- AKHIR DATA -->
-@endsection
+                        <!-- TOMBOL TAMBAH DATA -->
+                        <div class="pb-3">
+                            <a class="btn btn-primary" href='{{ url('mahasiswa/create') }}'>+ Tambah Data</a>
+                        </div>
+
+                        <table class="table-striped table">
+                            <thead>
+                                <tr class="text-center">
+                                    <th>No</th>
+                                    <!-- <th>Foto</th> -->
+                                    <th>NIM</th>
+                                    <th>Nama Lengkap</th>
+                                    <th>Kelamin</th>
+                                    <th>Program Studi</th>
+                                    <th>Gambar</th>
+                                    <th>Kelas</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $i = $data->firstItem(); ?>
+                                @foreach ($data as $item)
+                                    <tr>
+                                        <td>{{ $i }}</td>
+                                        <!-- <td>
+                        @if ($item->foto)
+    <img style="max: width 50px; src="{{ url('foto') . '/' . $item->foto }}"/>
+    @endif
+                    </td> -->
+                                        <td>{{ $item->nim }}</td>
+                                        <td>{{ $item->nama }}</td>
+                                        <td>{{ $item->kelamin }}</td>
+                                        <td>{{ $item->jurusan }}</td>
+                                        <td>{{ $item->gambar }}</td>
+                                        <td>{{ $item->kelas }}</td>
+                                        <td>{{ $item->status }}</td>
+
+
+
+                                        <td>
+                                            <a class="btn btn-warning btn-sm"
+                                                href='{{ url('mahasiswa/' . $item->nim . '/edit') }}'>Edit</a>
+                                            <form action="{{ url('mahasiswa/' . $item->nim) }}" class='d-inline'
+                                                method="post" onsubmit="return confirm('Yakin akan menghapus data?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger btn-sm" name="submit"
+                                                    type="submit">Del</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+            <!-- AKHIR DATA -->
+        @endsection

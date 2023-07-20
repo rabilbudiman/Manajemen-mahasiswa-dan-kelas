@@ -25,13 +25,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/mahasiswa">
+                    <a class="nav-link d-flex align-items-center {{ Request::is('/mahasiswa') ? 'active' : '' }} gap-2"
+                        href="/mahasiswa">
                         <i class="bi bi-mortarboard-fill"></i>
                         Data Mahasiswa
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="/kelas">
+                    <a class="nav-link d-flex align-items-center {{ Request::is('/kelas') ? 'active' : '' }} gap-2"
+                        href="/kelas">
                         <i class="bi bi-person-workspace"></i>
                         Kelas
                     </a>

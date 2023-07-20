@@ -18,11 +18,11 @@ return new class extends Migration
             $table->unique('nim');
             $table->string('nama');
             $table->string('jurusan');
-            $table->string('angkatan');
-            $table->enum('kelamin', ['pria', 'wanita']);
-            $table->string('semester');
-            $table->string('kelas');
-            $table->string('status');
+            //$table->string('angkatan');
+            //$table->enum('kelamin', ['pria', 'wanita']);
+            //$table->string('semester');
+            //$table->string('kelas');
+            //$table->string('status');
 
             
         });
