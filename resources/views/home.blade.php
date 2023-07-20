@@ -34,7 +34,7 @@
         <img src="{{ asset('img/belajar.svg') }}" alt="orang belajar" width="500">
         <div class="flex-column  text-secondary font-u">
             <h1 class="text-bold">MAMAK</h1>
-            <p class="text-bold text-capitalize">Selamat Datang di Manajemen Mahasiswa dan Kelas (MAMAK)</p>
+            <p class="text-bold text-capitalize">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus officiis, dolore aspernatur mollitia quidem magnam laborum facere delectus culpa, consequuntur eum reiciendis illo voluptatem provident dolor excepturi! Omnis, molestias quam.</p>
         </div>
       </div>
 </body>
