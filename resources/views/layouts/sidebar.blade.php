@@ -9,7 +9,9 @@
         <div class="offcanvas-body d-md-flex flex-column pt-lg-3 m-3 overflow-y-auto p-0">
             <ul class="nav nav-pills nav-fill flex-column">
                 <li class="nav-item">
-                    <a aria-current="page" class="nav-link d-flex align-items-center active gap-2" href="#">
+                    <a aria-current="page"
+                        class="nav-link d-flex align-items-center {{ Request::is('dashboard') ? 'active' : '' }} gap-2"
+                        href="/dashboard">
                         <svg height="1em" viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg">
                             <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                             <path
@@ -25,14 +27,14 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center {{ Request::is('/mahasiswa') ? 'active' : '' }} gap-2"
+                    <a class="nav-link d-flex align-items-center {{ Request::is('mahasiswa') ? 'active' : '' }} gap-2"
                         href="/mahasiswa">
                         <i class="bi bi-mortarboard-fill"></i>
                         Data Mahasiswa
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center {{ Request::is('/kelas') ? 'active' : '' }} gap-2"
+                    <a class="nav-link d-flex align-items-center {{ Request::is('kelas') ? 'active' : '' }} gap-2"
                         href="/kelas">
                         <i class="bi bi-person-workspace"></i>
                         Kelas
