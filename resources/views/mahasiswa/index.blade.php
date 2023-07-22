@@ -51,7 +51,6 @@
                             <thead>
                                 <tr class="text-center">
                                     <th>No</th>
-                                    <!-- <th>Foto</th> -->
                                     <th>NIM</th>
                                     <th>Nama Lengkap</th>
                                     <th>Kelamin</th>
@@ -87,6 +86,7 @@
                                             </form>
                                         </td>
                                     </tr>
+                                    <?php $i++ ?>
                                 @endforeach
                             </tbody>
                         </table>
