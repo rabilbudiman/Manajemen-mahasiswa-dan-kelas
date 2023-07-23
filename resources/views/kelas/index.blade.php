@@ -30,64 +30,101 @@
                     <h1 class="h2">Data kelas</h1>
                 </div>
 
-
-
                 <div class="bg-body my-3 rounded p-3 shadow-sm">
                     <!-- FORM PENCARIAN -->
-                    <div class="pb-3">
-                        <form action="{{ url('mahasiswa') }}" class="d-flex" method="get">
-                            <input aria-label="Search" class="form-control me-1" name="katakunci"
-                                placeholder="Masukkan kata kunci" type="search" value="{{ Request::get('katakunci') }}">
-                            <button class="btn btn-secondary" type="submit">Cari</button>
-                        </form>
-                    </div>
+                        <div class="pb-3">
+                            <form action="{{ url('mahasiswa') }}" class="d-flex" method="get">
+                                <input aria-label="Search" class="form-control me-1" name="katakunci"
+                                    placeholder="Masukkan kata kunci" type="search" value="{{ Request::get('katakunci') }}">
+                                <button class="btn btn-secondary" type="submit">Cari</button>
+                            </form>
+                        </div>
+
+                    <!-- TOMBOL DATA KELAS-->
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <a  href="/kelas" value="kelas15" class="btn btn-primary">Kelas 15</a>
+                                </div>
+
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <a  href="/kelas" value="kelas16" class="btn btn-primary">Kelas 16</a>
+                                </div>
+
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <a  href="/kelas" value="kelas17" class="btn btn-primary">Kelas 17</a>
+                                </div>
+
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <a  href="/kelas" value="kelas18" class="btn btn-primary">Kelas 18</a>
+                                </div>
+
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <a  href="/kelas" value="kelas19" class="btn btn-primary">Kelas 19</a>
+                                </div>
+
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <a  href="/kelas" value="kelas20" class="btn btn-primary">Kelas 20</a>
+                                </div>
+
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <a  href="/kelas" value="kelas21" class="btn btn-primary">Kelas 21</a>
+                                </div>
+
+                                <div class="col-xs-3 col-sm-3 col-md-3">
+                                    <a  href="/kelas" value="kelas22" class="btn btn-primary">Kelas 22</a>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
 
                     <!-- TOMBOL TAMBAH DATA -->
-                    <div class="pb-3">
-                        <a class="btn btn-primary" href='{{ url('kelas/create') }}'>+ Tambah Data</a>
-                    </div>
+                        <div class="pb-3">
+                            <a class="btn btn-primary" href='{{ url('kelas/create') }}'>+ Tambah Data</a>
+                        </div>
 
-                    <table class="table-striped table">
-                        <thead>
-                            <tr>
-                                <th class="col-md-1">No</th>
-                                <th class="col-md-3">NIM</th>
-                                <th class="col-md-4">Nama</th>
-                                <th class="col-md-4">Kelamin</th>
-                                <th class="col-md-2">Jurusan</th>
-                                <th class="col-md-4">Kelas</th>
-                                <th class="col-md-2">Status</th>
-                                <th class="col-md-2">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $i = $data->firstItem(); ?>
-                            @foreach ($data as $item)
+                        <table class="table-striped table">
+                            <thead>
                                 <tr>
-                                    <td>{{ $i }}</td>
-                                    <td>{{ $item->nim }}</td>
-                                    <td>{{ $item->nama }}</td>
-                                    <td>{{ $item->kelamin }}</td>
-                                    <td>{{ $item->jurusan }}</td>
-                                    <td>{{ $item->kelas }}</td>
-                                    <td>{{ $item->status }}</td>
-                                    <td>
-                                        <a class="btn btn-warning btn-sm"
-                                            href='{{ url('kelas/' . $item->nim . '/edit') }}'>Edit</a>
-                                        <form action="{{ url('mahasiswa/' . $item->nim) }}" class='d-inline' method="post"
-                                            onsubmit="return confirm('Yakin akan menghapus data?')">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button class="btn btn-danger btn-sm" name="submit" type="submit">Del</button>
-                                        </form>
-                                    </td>
+                                    <th class="col-md-1">No</th>
+                                    <th class="col-md-3">NIM</th>
+                                    <th class="col-md-4">Nama</th>
+                                    <th class="col-md-4">Kelamin</th>
+                                    <th class="col-md-2">Jurusan</th>
+                                    <th class="col-md-4">Kelas</th>
+                                    <th class="col-md-2">Status</th>
+                                    <th class="col-md-2">Aksi</th>
                                 </tr>
-                                <?php $i++; ?>
-                            @endforeach
-                        </tbody>
-                    </table>
-                    {{ $data->withQueryString()->links() }}
-                </div>
+                            </thead>
+                            <tbody>
+                                <?php $i = $data->firstItem(); ?>
+                                @foreach ($data as $item)
+                                    <tr>
+                                        <td>{{ $i }}</td>
+                                        <td>{{ $item->nim }}</td>
+                                        <td>{{ $item->nama }}</td>
+                                        <td>{{ $item->kelamin }}</td>
+                                        <td>{{ $item->jurusan }}</td>
+                                        <td>{{ $item->kelas }}</td>
+                                        <td>{{ $item->status }}</td>
+                                        <td>
+                                            <a class="btn btn-warning btn-sm"
+                                                href='{{ url('kelas/' . $item->nim . '/edit') }}'>Edit</a>
+                                            <form action="{{ url('mahasiswa/' . $item->nim) }}" class='d-inline' method="post"
+                                                onsubmit="return confirm('Yakin akan menghapus data?')">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger btn-sm" name="submit" type="submit">Del</button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <?php $i++; ?>
+                                @endforeach
+                            </tbody>
+                        </table>
+                        {{ $data->withQueryString()->links() }}
+                    </div>
                 <!-- AKHIR DATA -->
             @endsection
     </div>
