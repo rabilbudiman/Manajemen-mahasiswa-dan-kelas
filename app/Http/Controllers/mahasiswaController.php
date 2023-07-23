@@ -83,8 +83,9 @@ class mahasiswaController extends Controller
             'jurusan' => $request->jurusan,
             'kelas' => $request->kelas,
             'status' => $request->status,
-    
+
         ];
+
 
 
         mahasiswa::create($data);
@@ -136,7 +137,7 @@ class mahasiswaController extends Controller
             'kelas.required' => 'Opsi kelas harap diisi',
             'status.required' => 'Opsi status wajib diisi',
         ]);
-
+        
 
         $data = [
             'nama' => $request->nama,

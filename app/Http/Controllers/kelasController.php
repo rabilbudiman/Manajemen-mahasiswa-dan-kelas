@@ -48,24 +48,37 @@ class kelasController extends Controller
     {
         Session::flash('nim', $request->nim);
         Session::flash('nama', $request->nama);
+        Session::flash('kelamin', $request->kelamin);
         Session::flash('jurusan', $request->jurusan);
+        Session::flash('kelas', $request->kelas);
+        Session::flash('status', $request->status);
 
         $request->validate([
             'nim' => 'required|numeric|unique:mahasiswa,nim',
             'nama' => 'required',
+            'kelamin' => 'required',
             'jurusan' => 'required',
+            'kelas' => 'required',
+            'status' => 'required',
         ], [
             'nim.required' => 'NIM wajib diisi',
             'nim.numeric' => 'NIM wajib dalam angka',
             'nim.unique' => 'NIM yang diisikan sudah ada dalam database',
             'nama.required' => 'Nama wajib diisi',
+            'kelamin.required' => 'Harap isi form kelamin',
             'jurusan.required' => 'Jurusan wajib diisi',
+            'kelas.required' => 'Harap isi form kelas',
+            'status.required' => 'Status wajib diisi',
         ]);
         $data = [
             'nim' => $request->nim,
             'nama' => $request->nama,
+            'kelamin' => $request->kelamin,
             'jurusan' => $request->jurusan,
+            'kelas' => $request->kelas,
+            'status' => $request->status,
         ];
+        
         kelas::create($data);
         return redirect()->to('kelas')->with('success', 'Berhasil menambahkan data');
     }
@@ -104,14 +117,24 @@ class kelasController extends Controller
     {
         $request->validate([
             'nama' => 'required',
+            'kelamin' => 'required',
             'jurusan' => 'required',
+            'kelas' => 'required',
+            'status' => 'required',
         ], [
             'nama.required' => 'Nama wajib diisi',
-            'jurusan.required' => 'Jurusan wajib diisi',
+            'kelamin.required' => 'Opsi kelamin harap diisi',
+            'jurusan.required' => 'Opsi jurusan wajib diisi',
+            'kelas.required' => 'Opsi kelas harap diisi',
+            'status.required' => 'Opsi status wajib diisi',
         ]);
+
         $data = [
             'nama' => $request->nama,
+            'kelamin' => $request->kelamin,
             'jurusan' => $request->jurusan,
+            'kelas' => $request->kelas,
+            'status' => $request->status,
         ];
         kelas::where('nim', $id)->update($data);
         return redirect()->to('kelas')->with('success', 'Berhasil melakukan update data');
