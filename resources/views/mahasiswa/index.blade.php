@@ -61,10 +61,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php $i = $data->firstItem(); ?>
                                 @foreach ($data as $item)
                                     <tr class="text-center">
-                                        <td>{{ $i }}</td>
+                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->nim }}</td>
                                         <td>{{ $item->nama }}</td>
                                         <td>{{ $item->kelamin }}</td>
@@ -86,7 +85,6 @@
                                             </form>
                                         </td>
                                     </tr>
-                                    <?php $i++ ?>
                                 @endforeach
                             </tbody>
                         </table>
