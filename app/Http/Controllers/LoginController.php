@@ -23,7 +23,7 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('/dashboard');
         } else {
-            return back()->with('loginError', 'Login Failed');
+            return back()->with('loginError', 'Login Failed! Email or password invalid');
         }
 
     }
