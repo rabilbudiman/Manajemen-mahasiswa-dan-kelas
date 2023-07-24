@@ -61,7 +61,8 @@
                                     <div class="me-3">
                                         <div class="fw-bold text-lg">USERS</div>
                                     </div>
-                                    <svg height="40" viewBox="0 0 640 512" width="40" xmlns="http://www.w3.org/2000/svg">
+                                    <svg height="40" viewBox="0 0 640 512" width="40"
+                                        xmlns="http://www.w3.org/2000/svg">
                                         <!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                                         <style>
                                             svg {
@@ -277,7 +278,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js
-            "></script>
+        "></script>
     <script src="{{ asset('js/dashboard.js') }}"></script>
 </body>
 
