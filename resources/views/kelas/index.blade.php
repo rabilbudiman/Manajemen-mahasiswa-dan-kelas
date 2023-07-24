@@ -161,10 +161,9 @@
                                         </tbody>
                                 </table>
                             </div>
-
-                                    
+             
                             <!-- AKHIR DATA -->
-
+                            <br>
                             <!-- DATA KELAS 16 -->
 
                             <div class="container-fluid">
@@ -209,10 +208,9 @@
                                         </tbody>
                                     </table>
                             </div>
-
-                                    
+                       
                             <!-- AKHIR DATA -->
-
+                            <br>
                             <!-- DATA KELAS 17 -->
 
                             <div class="container-fluid">
@@ -259,7 +257,7 @@
                             </div>
 
                             <!-- AKHIR DATA -->
-
+                            <br>
                             <!-- DATA KELAS 18 -->
 
                             <div class="container-fluid">
@@ -306,7 +304,7 @@
                             </div>
 
                             <!-- AKHIR DATA -->
-
+                            <br>
                             <!-- DATA KELAS 19 -->
 
                             <div class="container-fluid">
@@ -353,7 +351,7 @@
                             </div>
 
                             <!-- AKHIR DATA -->
-
+                            <br>
                             <!-- DATA KELAS 20 -->
 
                             <div class="container-fluid">
@@ -400,7 +398,7 @@
                             </div>
 
                             <!-- AKHIR DATA -->
-
+                            <br>
                             <!-- DATA KELAS 21 -->
 
                             <div class="container-fluid">
@@ -447,7 +445,7 @@
                             </div>
 
                             <!-- AKHIR DATA -->
-
+                            <br>
                             <!-- DATA KELAS 22 -->
 
                             <div class="container-fluid">
@@ -494,7 +492,7 @@
                             </div>
 
                             <!-- AKHIR DATA -->
-
+                            <br>
                         </div>
                     
             @endsection

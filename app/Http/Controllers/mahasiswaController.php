@@ -52,6 +52,7 @@ class mahasiswaController extends Controller
         Session::flash('jurusan', $request->jurusan);
         Session::flash('kelas', $request->kelas);
         Session::flash('status', $request->status);
+    
 
 
         $request->validate([
