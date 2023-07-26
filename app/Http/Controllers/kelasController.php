@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\kelas;
+
+use App\Models\mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -25,7 +27,18 @@ class kelasController extends Controller
         } else {
             $data = kelas::orderBy('nim', 'desc')->paginate($jumlahbaris);
         }
-        return view('kelas.index')->with('data', $data);
+        $kelas = ['kelas15', 'kelas16', 
+        'kelas17','kelas18',
+        'kelas19','kelas20',
+        'kelas21', 'kelas22'];
+        $dataKelas = [];
+      foreach ($kelas as $value) {
+        $mhsw = mahasiswa::where('kelas', $value)->get();
+        $dataKelas[] = $mhsw;
+        }
+        $dataView['dataKelas'] = $dataKelas;
+        
+        return view('kelas.index', $dataView,)->with('data', $data);
     }
 
     /**
@@ -94,6 +107,7 @@ class kelasController extends Controller
     {
         //
     }
+
 
     /**
      * Show the form for editing the specified resource.

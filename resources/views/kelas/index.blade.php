@@ -32,469 +32,443 @@
 
                 <div class="bg-body my-3 rounded p-3 shadow-sm">
                     <!-- FORM PENCARIAN -->
-                        <div class="pb-3">
-                            <form action="{{ url('mahasiswa') }}" class="d-flex" method="get">
-                                <input aria-label="Search" class="form-control me-1" name="katakunci"
-                                    placeholder="Masukkan kata kunci" type="search" value="{{ Request::get('katakunci') }}">
-                                <button class="btn btn-secondary" type="submit">Cari</button>
-                            </form>
-                        </div>
-                        <br>
+                    <div class="pb-3">
+                        <form action="{{ url('mahasiswa') }}" class="d-flex" method="get">
+                            <input aria-label="Search" class="form-control me-1" name="katakunci"
+                                placeholder="Masukkan kata kunci" type="search" value="{{ Request::get('katakunci') }}">
+                            <button class="btn btn-secondary" type="submit">Cari</button>
+                        </form>
+                    </div>
+                    <br>
 
                     <!-- TOMBOL DATA KELAS-->
 
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            <div class="col">
+
+                                <a href="#Kelas15" value="kelas15" class="btn btn-primary">Kelas 15</a>
+                            </div>
+
+                            <div class="col">
+
+                                <a href="#Kelas16" value="kelas16" class="btn btn-primary">Kelas 16</a>
+                            </div>
+
+                            <div class="col">
+
+                                <a href="#Kelas17" value="kelas17" class="btn btn-primary">Kelas 17</a>
+                            </div>
+
+                            <div class="col">
+
+                                <a href="#Kelas18" value="kelas18" class="btn btn-primary">Kelas 18</a>
+                            </div>
+
+                            <div class="col">
+
+                                <a href="#Kelas19" value="kelas19" class="btn btn-primary">Kelas 19</a>
+                            </div>
+
+                            <div class="col">
+
+                                <a href="#Kelas20" value="kelas20" class="btn btn-primary">Kelas 20</a>
+                            </div>
+
+                            <div class="col">
+
+                                <a href="#Kelas21" value="kelas21" class="btn btn-primary">Kelas 21</a>
+                            </div>
+
+                            <div class="col">
+
+                                <a href="#Kelas22" value="kelas22" class="btn btn-primary">Kelas 22</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="container">
+
+                        <!-- DATA KELAS 15 -->
+
                         <div class="container-fluid">
-                            <div class="row">
 
-                                <div class="col">
-                                    <div class="card shadow-sm">
-                                        <div class="card-body">
-                                            <a  href="/kelas" value="kelas15" class="btn btn-primary">Kelas 15</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card shadow-sm">
-                                        <div class="card-body">
-                                            <a  href="/kelas" value="kelas16" class="btn btn-primary">Kelas 16</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card shadow-sm">
-                                        <div class="card-body">
-                                            <a  href="/kelas" value="kelas17" class="btn btn-primary">Kelas 17</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card shadow-sm">
-                                        <div class="card-body">
-                                            <a  href="/kelas" value="kelas18" class="btn btn-primary">Kelas 18</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card shadow-sm">
-                                        <div class="card-body">
-                                            <a  href="/kelas" value="kelas19" class="btn btn-primary">Kelas 19</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card shadow-sm">
-                                        <div class="card-body">
-                                            <a  href="/kelas" value="kelas20" class="btn btn-primary">Kelas 20</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card shadow-sm">
-                                        <div class="card-body">
-                                            <a  href="/kelas" value="kelas21" class="btn btn-primary">Kelas 21</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="card shadow-sm">
-                                        <div class="card-body">
-                                            <a  href="/kelas" value="kelas22" class="btn btn-primary">Kelas 22</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
+                            <table class="table-striped table">
+                                <h3 id="Kelas15">Kelas 15</h3>
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-1">No</th>
+                                        <th class="col-md-3">NIM</th>
+                                        <th class="col-md-4">Nama</th>
+                                        <th class="col-md-4">Kelamin</th>
+                                        <th class="col-md-2">Jurusan</th>
+                                        <th class="col-md-4">Kelas</th>
+                                        <th class="col-md-2">Status</th>
+                                        <th class="col-md-2">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($dataKelas[0] as $mahasiswa)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $mahasiswa->nim }}</td>
+                                            <td>{{ $mahasiswa->nama }}</td>
+                                            <td>{{ $mahasiswa->kelamin }}</td>
+                                            <td>{{ $mahasiswa->jurusan }}</td>
+                                            <td>{{ $mahasiswa->kelas }}</td>
+                                            <td>{{ $mahasiswa->status }}</td>
+                                            <td>
+                                                <a class="btn btn-warn  ing btn-sm"
+                                                    href='{{ url('kelas/' . $mahasiswa->nim . '/edit') }}'>Edit</a>
+                                                <form action="{{ url('mahasiswa/' . $mahasiswa->nim) }}" class='d-inline'
+                                                    method="post" onsubmit="return confirm('Yakin akan menghapus data?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-sm" name="submit"
+                                                        type="submit">Del</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
+
+                        <!-- AKHIR DATA -->
                         <br>
+                        <!-- DATA KELAS 16 -->
 
-                        <div class="container">
-
-                            <!-- DATA KELAS 15 -->
-
-                            <div class="container-fluid">
-
-                                <table class="table-striped table">
-                                        <h3>Kelas 15</h3>
-                                        <thead>
-                                            <tr>
-                                                <th class="col-md-1">No</th>
-                                                <th class="col-md-3">NIM</th>
-                                                <th class="col-md-4">Nama</th>
-                                                <th class="col-md-4">Kelamin</th>
-                                                <th class="col-md-2">Jurusan</th>
-                                                <th class="col-md-4">Kelas</th>
-                                                <th class="col-md-2">Status</th>
-                                                <th class="col-md-2">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php $i = $data->firstItem(); ?>
-                                            @foreach ($data as $item)
-                                                <tr>
-                                                    <td>{{ $i }}</td>
-                                                    <td>{{ $item->nim }}</td>
-                                                    <td>{{ $item->nama }}</td>
-                                                    <td>{{ $item->kelamin }}</td>
-                                                    <td>{{ $item->jurusan }}</td>
-                                                    <td>{{ $item->kelas }}</td>
-                                                    <td>{{ $item->status }}</td>
-                                                    <td>
-                                                        <a class="btn btn-warning btn-sm"
-                                                            href='{{ url('kelas/' . $item->nim . '/edit') }}'>Edit</a>
-                                                        <form action="{{ url('mahasiswa/' . $item->nim) }}" class='d-inline' method="post"
-                                                            onsubmit="return confirm('Yakin akan menghapus data?')">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger btn-sm" name="submit" type="submit">Del</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                <?php $i++; ?>
-                                            @endforeach
-                                        </tbody>
-                                </table>
-                            </div>
-             
-                            <!-- AKHIR DATA -->
-                            <br>
-                            <!-- DATA KELAS 16 -->
-
-                            <div class="container-fluid">
-                                <table class="table-striped table">
-                                        <h3>Kelas 16</h3>
-                                        <thead>
-                                            <tr>
-                                                <th class="col-md-1">No</th>
-                                                <th class="col-md-3">NIM</th>
-                                                <th class="col-md-4">Nama</th>
-                                                <th class="col-md-4">Kelamin</th>
-                                                <th class="col-md-2">Jurusan</th>
-                                                <th class="col-md-4">Kelas</th>
-                                                <th class="col-md-2">Status</th>
-                                                <th class="col-md-2">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php $i = $data->firstItem(); ?>
-                                            @foreach ($data as $item)
-                                                <tr>
-                                                    <td>{{ $i }}</td>
-                                                    <td>{{ $item->nim }}</td>
-                                                    <td>{{ $item->nama }}</td>
-                                                    <td>{{ $item->kelamin }}</td>
-                                                    <td>{{ $item->jurusan }}</td>
-                                                    <td>{{ $item->kelas }}</td>
-                                                    <td>{{ $item->status }}</td>
-                                                    <td>
-                                                        <a class="btn btn-warning btn-sm"
-                                                            href='{{ url('kelas/' . $item->nim . '/edit') }}'>Edit</a>
-                                                        <form action="{{ url('mahasiswa/' . $item->nim) }}" class='d-inline' method="post"
-                                                            onsubmit="return confirm('Yakin akan menghapus data?')">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger btn-sm" name="submit" type="submit">Del</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                <?php $i++; ?>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                            </div>
-                       
-                            <!-- AKHIR DATA -->
-                            <br>
-                            <!-- DATA KELAS 17 -->
-
-                            <div class="container-fluid">
-                                <table class="table-striped table">
-                                        <h3>Kelas 17</h3>
-                                        <thead>
-                                            <tr>
-                                                <th class="col-md-1">No</th>
-                                                <th class="col-md-3">NIM</th>
-                                                <th class="col-md-4">Nama</th>
-                                                <th class="col-md-4">Kelamin</th>
-                                                <th class="col-md-2">Jurusan</th>
-                                                <th class="col-md-4">Kelas</th>
-                                                <th class="col-md-2">Status</th>
-                                                <th class="col-md-2">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php $i = $data->firstItem(); ?>
-                                            @foreach ($data as $item)
-                                                <tr>
-                                                    <td>{{ $i }}</td>
-                                                    <td>{{ $item->nim }}</td>
-                                                    <td>{{ $item->nama }}</td>
-                                                    <td>{{ $item->kelamin }}</td>
-                                                    <td>{{ $item->jurusan }}</td>
-                                                    <td>{{ $item->kelas }}</td>
-                                                    <td>{{ $item->status }}</td>
-                                                    <td>
-                                                        <a class="btn btn-warning btn-sm"
-                                                            href='{{ url('kelas/' . $item->nim . '/edit') }}'>Edit</a>
-                                                        <form action="{{ url('mahasiswa/' . $item->nim) }}" class='d-inline' method="post"
-                                                            onsubmit="return confirm('Yakin akan menghapus data?')">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger btn-sm" name="submit" type="submit">Del</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                <?php $i++; ?>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                            </div>
-
-                            <!-- AKHIR DATA -->
-                            <br>
-                            <!-- DATA KELAS 18 -->
-
-                            <div class="container-fluid">
-                                <table class="table-striped table">
-                                        <h3>Kelas 18</h3>
-                                        <thead>
-                                            <tr>
-                                                <th class="col-md-1">No</th>
-                                                <th class="col-md-3">NIM</th>
-                                                <th class="col-md-4">Nama</th>
-                                                <th class="col-md-4">Kelamin</th>
-                                                <th class="col-md-2">Jurusan</th>
-                                                <th class="col-md-4">Kelas</th>
-                                                <th class="col-md-2">Status</th>
-                                                <th class="col-md-2">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php $i = $data->firstItem(); ?>
-                                            @foreach ($data as $item)
-                                                <tr>
-                                                    <td>{{ $i }}</td>
-                                                    <td>{{ $item->nim }}</td>
-                                                    <td>{{ $item->nama }}</td>
-                                                    <td>{{ $item->kelamin }}</td>
-                                                    <td>{{ $item->jurusan }}</td>
-                                                    <td>{{ $item->kelas }}</td>
-                                                    <td>{{ $item->status }}</td>
-                                                    <td>
-                                                        <a class="btn btn-warning btn-sm"
-                                                            href='{{ url('kelas/' . $item->nim . '/edit') }}'>Edit</a>
-                                                        <form action="{{ url('mahasiswa/' . $item->nim) }}" class='d-inline' method="post"
-                                                            onsubmit="return confirm('Yakin akan menghapus data?')">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger btn-sm" name="submit" type="submit">Del</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                <?php $i++; ?>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                            </div>
-
-                            <!-- AKHIR DATA -->
-                            <br>
-                            <!-- DATA KELAS 19 -->
-
-                            <div class="container-fluid">
-                                <table class="table-striped table">
-                                        <h3>Kelas 19</h3>
-                                        <thead>
-                                            <tr>
-                                                <th class="col-md-1">No</th>
-                                                <th class="col-md-3">NIM</th>
-                                                <th class="col-md-4">Nama</th>
-                                                <th class="col-md-4">Kelamin</th>
-                                                <th class="col-md-2">Jurusan</th>
-                                                <th class="col-md-4">Kelas</th>
-                                                <th class="col-md-2">Status</th>
-                                                <th class="col-md-2">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php $i = $data->firstItem(); ?>
-                                            @foreach ($data as $item)
-                                                <tr>
-                                                    <td>{{ $i }}</td>
-                                                    <td>{{ $item->nim }}</td>
-                                                    <td>{{ $item->nama }}</td>
-                                                    <td>{{ $item->kelamin }}</td>
-                                                    <td>{{ $item->jurusan }}</td>
-                                                    <td>{{ $item->kelas }}</td>
-                                                    <td>{{ $item->status }}</td>
-                                                    <td>
-                                                        <a class="btn btn-warning btn-sm"
-                                                            href='{{ url('kelas/' . $item->nim . '/edit') }}'>Edit</a>
-                                                        <form action="{{ url('mahasiswa/' . $item->nim) }}" class='d-inline' method="post"
-                                                            onsubmit="return confirm('Yakin akan menghapus data?')">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger btn-sm" name="submit" type="submit">Del</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                <?php $i++; ?>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                            </div>
-
-                            <!-- AKHIR DATA -->
-                            <br>
-                            <!-- DATA KELAS 20 -->
-
-                            <div class="container-fluid">
-                                <table class="table-striped table">
-                                        <h3>Kelas 20</h3>
-                                        <thead>
-                                            <tr>
-                                                <th class="col-md-1">No</th>
-                                                <th class="col-md-3">NIM</th>
-                                                <th class="col-md-4">Nama</th>
-                                                <th class="col-md-4">Kelamin</th>
-                                                <th class="col-md-2">Jurusan</th>
-                                                <th class="col-md-4">Kelas</th>
-                                                <th class="col-md-2">Status</th>
-                                                <th class="col-md-2">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php $i = $data->firstItem(); ?>
-                                            @foreach ($data as $item)
-                                                <tr>
-                                                    <td>{{ $i }}</td>
-                                                    <td>{{ $item->nim }}</td>
-                                                    <td>{{ $item->nama }}</td>
-                                                    <td>{{ $item->kelamin }}</td>
-                                                    <td>{{ $item->jurusan }}</td>
-                                                    <td>{{ $item->kelas }}</td>
-                                                    <td>{{ $item->status }}</td>
-                                                    <td>
-                                                        <a class="btn btn-warning btn-sm"
-                                                            href='{{ url('kelas/' . $item->nim . '/edit') }}'>Edit</a>
-                                                        <form action="{{ url('mahasiswa/' . $item->nim) }}" class='d-inline' method="post"
-                                                            onsubmit="return confirm('Yakin akan menghapus data?')">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger btn-sm" name="submit" type="submit">Del</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                <?php $i++; ?>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                            </div>
-
-                            <!-- AKHIR DATA -->
-                            <br>
-                            <!-- DATA KELAS 21 -->
-
-                            <div class="container-fluid">
-                                <table class="table-striped table">
-                                        <h3>Kelas 21</h3>
-                                        <thead>
-                                            <tr>
-                                                <th class="col-md-1">No</th>
-                                                <th class="col-md-3">NIM</th>
-                                                <th class="col-md-4">Nama</th>
-                                                <th class="col-md-4">Kelamin</th>
-                                                <th class="col-md-2">Jurusan</th>
-                                                <th class="col-md-4">Kelas</th>
-                                                <th class="col-md-2">Status</th>
-                                                <th class="col-md-2">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php $i = $data->firstItem(); ?>
-                                            @foreach ($data as $item)
-                                                <tr>
-                                                    <td>{{ $i }}</td>
-                                                    <td>{{ $item->nim }}</td>
-                                                    <td>{{ $item->nama }}</td>
-                                                    <td>{{ $item->kelamin }}</td>
-                                                    <td>{{ $item->jurusan }}</td>
-                                                    <td>{{ $item->kelas }}</td>
-                                                    <td>{{ $item->status }}</td>
-                                                    <td>
-                                                        <a class="btn btn-warning btn-sm"
-                                                            href='{{ url('kelas/' . $item->nim . '/edit') }}'>Edit</a>
-                                                        <form action="{{ url('mahasiswa/' . $item->nim) }}" class='d-inline' method="post"
-                                                            onsubmit="return confirm('Yakin akan menghapus data?')">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger btn-sm" name="submit" type="submit">Del</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                <?php $i++; ?>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                            </div>
-
-                            <!-- AKHIR DATA -->
-                            <br>
-                            <!-- DATA KELAS 22 -->
-
-                            <div class="container-fluid">
-                                <table class="table-striped table">
-                                        <h3>Kelas 22</h3>
-                                        <thead>
-                                            <tr>
-                                                <th class="col-md-1">No</th>
-                                                <th class="col-md-3">NIM</th>
-                                                <th class="col-md-4">Nama</th>
-                                                <th class="col-md-4">Kelamin</th>
-                                                <th class="col-md-2">Jurusan</th>
-                                                <th class="col-md-4">Kelas</th>
-                                                <th class="col-md-2">Status</th>
-                                                <th class="col-md-2">Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php $i = $data->firstItem(); ?>
-                                            @foreach ($data as $item)
-                                                <tr>
-                                                    <td>{{ $i }}</td>
-                                                    <td>{{ $item->nim }}</td>
-                                                    <td>{{ $item->nama }}</td>
-                                                    <td>{{ $item->kelamin }}</td>
-                                                    <td>{{ $item->jurusan }}</td>
-                                                    <td>{{ $item->kelas }}</td>
-                                                    <td>{{ $item->status }}</td>
-                                                    <td>
-                                                        <a class="btn btn-warning btn-sm"
-                                                            href='{{ url('kelas/' . $item->nim . '/edit') }}'>Edit</a>
-                                                        <form action="{{ url('mahasiswa/' . $item->nim) }}" class='d-inline' method="post"
-                                                            onsubmit="return confirm('Yakin akan menghapus data?')">
-                                                            @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-danger btn-sm" name="submit" type="submit">Del</button>
-                                                        </form>
-                                                    </td>
-                                                </tr>
-                                                <?php $i++; ?>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
-                            </div>
-
-                            <!-- AKHIR DATA -->
-                            <br>
+                        <div class="container-fluid">
+                            <table class="table-striped table">
+                                <h3 id="Kelas16">Kelas 16</h3>
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-1">No</th>
+                                        <th class="col-md-3">NIM</th>
+                                        <th class="col-md-4">Nama</th>
+                                        <th class="col-md-4">Kelamin</th>
+                                        <th class="col-md-2">Jurusan</th>
+                                        <th class="col-md-4">Kelas</th>
+                                        <th class="col-md-2">Status</th>
+                                        <th class="col-md-2">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($dataKelas[1] as $mahasiswa)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $mahasiswa->nim }}</td>
+                                            <td>{{ $mahasiswa->nama }}</td>
+                                            <td>{{ $mahasiswa->kelamin }}</td>
+                                            <td>{{ $mahasiswa->jurusan }}</td>
+                                            <td>{{ $mahasiswa->kelas }}</td>
+                                            <td>{{ $mahasiswa->status }}</td>
+                                            <td>
+                                                <a class="btn btn-warn  ing btn-sm"
+                                                    href='{{ url('kelas/' . $mahasiswa->nim . '/edit') }}'>Edit</a>
+                                                <form action="{{ url('mahasiswa/' . $mahasiswa->nim) }}" class='d-inline'
+                                                    method="post"
+                                                    onsubmit="return confirm('Yakin akan menghapus data?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-sm" name="submit"
+                                                        type="submit">Del</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
                         </div>
-                    
-            @endsection
+
+                        <!-- AKHIR DATA -->
+                        <br>
+                        <!-- DATA KELAS 17 -->
+
+                        <div class="container-fluid">
+                            <table class="table-striped table">
+                                <h3 id="Kelas17">Kelas 17</h3>
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-1">No</th>
+                                        <th class="col-md-3">NIM</th>
+                                        <th class="col-md-4">Nama</th>
+                                        <th class="col-md-4">Kelamin</th>
+                                        <th class="col-md-2">Jurusan</th>
+                                        <th class="col-md-4">Kelas</th>
+                                        <th class="col-md-2">Status</th>
+                                        <th class="col-md-2">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($dataKelas[2] as $mahasiswa)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $mahasiswa->nim }}</td>
+                                            <td>{{ $mahasiswa->nama }}</td>
+                                            <td>{{ $mahasiswa->kelamin }}</td>
+                                            <td>{{ $mahasiswa->jurusan }}</td>
+                                            <td>{{ $mahasiswa->kelas }}</td>
+                                            <td>{{ $mahasiswa->status }}</td>
+                                            <td>
+                                                <a class="btn btn-warn  ing btn-sm"
+                                                    href='{{ url('kelas/' . $mahasiswa->nim . '/edit') }}'>Edit</a>
+                                                <form action="{{ url('mahasiswa/' . $mahasiswa->nim) }}" class='d-inline'
+                                                    method="post"
+                                                    onsubmit="return confirm('Yakin akan menghapus data?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-sm" name="submit"
+                                                        type="submit">Del</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- AKHIR DATA -->
+                        <br>
+                        <!-- DATA KELAS 18 -->
+
+                        <div class="container-fluid">
+                            <table class="table-striped table">
+                                <h3 id="Kelas18">Kelas 18</h3>
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-1">No</th>
+                                        <th class="col-md-3">NIM</th>
+                                        <th class="col-md-4">Nama</th>
+                                        <th class="col-md-4">Kelamin</th>
+                                        <th class="col-md-2">Jurusan</th>
+                                        <th class="col-md-4">Kelas</th>
+                                        <th class="col-md-2">Status</th>
+                                        <th class="col-md-2">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($dataKelas[3] as $mahasiswa)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $mahasiswa->nim }}</td>
+                                            <td>{{ $mahasiswa->nama }}</td>
+                                            <td>{{ $mahasiswa->kelamin }}</td>
+                                            <td>{{ $mahasiswa->jurusan }}</td>
+                                            <td>{{ $mahasiswa->kelas }}</td>
+                                            <td>{{ $mahasiswa->status }}</td>
+                                            <td>
+                                                <a class="btn btn-warn  ing btn-sm"
+                                                    href='{{ url('kelas/' . $mahasiswa->nim . '/edit') }}'>Edit</a>
+                                                <form action="{{ url('mahasiswa/' . $mahasiswa->nim) }}" class='d-inline'
+                                                    method="post"
+                                                    onsubmit="return confirm('Yakin akan menghapus data?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-sm" name="submit"
+                                                        type="submit">Del</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- AKHIR DATA -->
+                        <br>
+                        <!-- DATA KELAS 19 -->
+
+                        <div class="container-fluid">
+                            <table class="table-striped table">
+                                <h3 id="Kelas19">Kelas 19</h3>
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-1">No</th>
+                                        <th class="col-md-3">NIM</th>
+                                        <th class="col-md-4">Nama</th>
+                                        <th class="col-md-4">Kelamin</th>
+                                        <th class="col-md-2">Jurusan</th>
+                                        <th class="col-md-4">Kelas</th>
+                                        <th class="col-md-2">Status</th>
+                                        <th class="col-md-2">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($dataKelas[4] as $mahasiswa)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $mahasiswa->nim }}</td>
+                                            <td>{{ $mahasiswa->nama }}</td>
+                                            <td>{{ $mahasiswa->kelamin }}</td>
+                                            <td>{{ $mahasiswa->jurusan }}</td>
+                                            <td>{{ $mahasiswa->kelas }}</td>
+                                            <td>{{ $mahasiswa->status }}</td>
+                                            <td>
+                                                <a class="btn btn-warn  ing btn-sm"
+                                                    href='{{ url('kelas/' . $mahasiswa->nim . '/edit') }}'>Edit</a>
+                                                <form action="{{ url('mahasiswa/' . $mahasiswa->nim) }}" class='d-inline'
+                                                    method="post"
+                                                    onsubmit="return confirm('Yakin akan menghapus data?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-sm" name="submit"
+                                                        type="submit">Del</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- AKHIR DATA -->
+                        <br>
+                        <!-- DATA KELAS 20 -->
+
+                        <div class="container-fluid">
+                            <table class="table-striped table">
+                                <h3 id="Kelas20">Kelas 20</h3>
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-1">No</th>
+                                        <th class="col-md-3">NIM</th>
+                                        <th class="col-md-4">Nama</th>
+                                        <th class="col-md-4">Kelamin</th>
+                                        <th class="col-md-2">Jurusan</th>
+                                        <th class="col-md-4">Kelas</th>
+                                        <th class="col-md-2">Status</th>
+                                        <th class="col-md-2">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($dataKelas[5] as $mahasiswa)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $mahasiswa->nim }}</td>
+                                            <td>{{ $mahasiswa->nama }}</td>
+                                            <td>{{ $mahasiswa->kelamin }}</td>
+                                            <td>{{ $mahasiswa->jurusan }}</td>
+                                            <td>{{ $mahasiswa->kelas }}</td>
+                                            <td>{{ $mahasiswa->status }}</td>
+                                            <td>
+                                                <a class="btn btn-warn  ing btn-sm"
+                                                    href='{{ url('kelas/' . $mahasiswa->nim . '/edit') }}'>Edit</a>
+                                                <form action="{{ url('mahasiswa/' . $mahasiswa->nim) }}" class='d-inline'
+                                                    method="post"
+                                                    onsubmit="return confirm('Yakin akan menghapus data?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-sm" name="submit"
+                                                        type="submit">Del</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- AKHIR DATA -->
+                        <br>
+                        <!-- DATA KELAS 21 -->
+
+                        <div class="container-fluid">
+                            <table class="table-striped table">
+                                <h3 id="Kelas21">Kelas 21</h3>
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-1">No</th>
+                                        <th class="col-md-3">NIM</th>
+                                        <th class="col-md-4">Nama</th>
+                                        <th class="col-md-4">Kelamin</th>
+                                        <th class="col-md-2">Jurusan</th>
+                                        <th class="col-md-4">Kelas</th>
+                                        <th class="col-md-2">Status</th>
+                                        <th class="col-md-2">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($dataKelas[6] as $mahasiswa)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $mahasiswa->nim }}</td>
+                                            <td>{{ $mahasiswa->nama }}</td>
+                                            <td>{{ $mahasiswa->kelamin }}</td>
+                                            <td>{{ $mahasiswa->jurusan }}</td>
+                                            <td>{{ $mahasiswa->kelas }}</td>
+                                            <td>{{ $mahasiswa->status }}</td>
+                                            <td>
+                                                <a class="btn btn-warn  ing btn-sm"
+                                                    href='{{ url('kelas/' . $mahasiswa->nim . '/edit') }}'>Edit</a>
+                                                <form action="{{ url('mahasiswa/' . $mahasiswa->nim) }}" class='d-inline'
+                                                    method="post"
+                                                    onsubmit="return confirm('Yakin akan menghapus data?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-sm" name="submit"
+                                                        type="submit">Del</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- AKHIR DATA -->
+                        <br>
+                        <!-- DATA KELAS 22 -->
+
+                        <div class="container-fluid">
+                            <table class="table-striped table">
+                                <h3 id="Kelas22">Kelas 22</h3>
+                                <thead>
+                                    <tr>
+                                        <th class="col-md-1">No</th>
+                                        <th class="col-md-3">NIM</th>
+                                        <th class="col-md-4">Nama</th>
+                                        <th class="col-md-4">Kelamin</th>
+                                        <th class="col-md-2">Jurusan</th>
+                                        <th class="col-md-4">Kelas</th>
+                                        <th class="col-md-2">Status</th>
+                                        <th class="col-md-2">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($dataKelas[7] as $mahasiswa)
+                                        <tr>
+                                            <td>{{ $loop->iteration }}</td>
+                                            <td>{{ $mahasiswa->nim }}</td>
+                                            <td>{{ $mahasiswa->nama }}</td>
+                                            <td>{{ $mahasiswa->kelamin }}</td>
+                                            <td>{{ $mahasiswa->jurusan }}</td>
+                                            <td>{{ $mahasiswa->kelas }}</td>
+                                            <td>{{ $mahasiswa->status }}</td>
+                                            <td>
+                                                <a class="btn btn-warn  ing btn-sm"
+                                                    href='{{ url('kelas/' . $mahasiswa->nim . '/edit') }}'>Edit</a>
+                                                <form action="{{ url('mahasiswa/' . $mahasiswa->nim) }}" class='d-inline'
+                                                    method="post"
+                                                    onsubmit="return confirm('Yakin akan menghapus data?')">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger btn-sm" name="submit"
+                                                        type="submit">Del</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- AKHIR DATA -->
+                        <br>
+                    </div>
+                @endsection
+            </div>
     </div>
-</div>
