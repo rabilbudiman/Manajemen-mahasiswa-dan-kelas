@@ -21,9 +21,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
-                        <i class="bi bi-people-fill"></i>
-                        Users
+                    <a class="nav-link d-flex align-items-center {{ Request::is('matakuliah') ? 'active' : '' }}  gap-2" href="/matakuliah">
+                        <i class="bi bi-book"></i>
+                        Data Mata Kuliah
                     </a>
                 </li>
                 <li class="nav-item">
